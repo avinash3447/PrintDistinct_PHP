@@ -1,15 +1,15 @@
 <?php
-function isDistint(array $arr)
+function findDistnctValues(array $arr)
 	{
 	$len = count($arr);
 	$result = [];
   // need another array to track the occurrence of the element
-	$isExist = [];
+	$tracker = [];
 	for ($i = 0; $i < $len; $i++)
 		{
-		if (!in_array($arr[$i], $isExist))
+		if (!in_array($arr[$i], $tracker))
 			{
-			$isExist[] = $arr[$i];
+			$tracker[] = $arr[$i];
 			$result[] = $arr[$i];
 			}
 		  else
@@ -23,5 +23,5 @@ function isDistint(array $arr)
 	return $result;
 	}
 
-isDistint([1, 3, 2, 3]);
+findDistnctValues([1, 3, 2, 3]);
 ?>
